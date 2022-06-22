@@ -13,7 +13,7 @@ trait WithDatabaseable
         $table = strtolower(get_class());
         $connection = MyConnect::getInstance();
 
-        $sql = "select * from " . $table . " where id" . $table . " = " . $id . ";";
+        $sql = "select * from " . $table . " where id" . $table . " = " . $id. ";";
         $result = $connection->query($sql);
         if ($result->num_rows == 0) {
             return false;
@@ -61,7 +61,7 @@ trait WithDatabaseable
 
         $ret = $connection->query($sql);
         if ($ret) {
-            $this->id + $table = $connection->getInsertID();
+            $this->{"id" . $table} = $connection->getInsertID();
             return true;
         } else {
             return false;
@@ -151,7 +151,7 @@ trait WithDatabaseable
                 $sql .= ", ";
             }
         }
-        $sql .= " where id" . $table . " = " . $this->id;
+        $sql .= " where id" . $table . " = " . $this->{"id" . $table};
 
         $ret = $connection->query($sql);
         return $ret === false ? false : true;
