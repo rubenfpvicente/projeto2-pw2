@@ -94,7 +94,7 @@ trait WithDatabaseable
         }
 
         $results = $connection->query($sql);
-        if ($results->num_rows == 0) {
+        if ($results->rowCount() == 0) {
             return [];
         }
 
@@ -103,7 +103,7 @@ trait WithDatabaseable
         $properties = get_class_vars(get_class());
         $properties = array_keys($properties);
         $objects = [];
-        while($row = $results->fetch_assoc()){
+        while($row = $results->fetch()){
             $objects[] = new $class($row);
             
         }
