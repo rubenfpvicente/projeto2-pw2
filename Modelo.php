@@ -1,48 +1,70 @@
 <?php
 
-require_once('Databaseable.php');
-require_once('MyConnect.php');
-
-class Fotografo implements Databaseable
-{
+class Modelo implements Databaseable{
     use WithDatabaseable;
 
-    protected $idfotografo;
+    protected $idmodelo;
+    protected $sexo;
     protected $nome;
+    protected $medida1;
+    protected $medida2;
+    protected $medida3;
     protected $rua;
     protected $porta;
     protected $codigopostal;
     protected $cidade;
     protected $pais;
     protected $contacto;
-    protected $nif;    
+    protected $nif;
+    protected $altura;
+    protected $idagente;  
 
-    public function __construct(array $parameters)
+    public function __construct($parameters)
     {
         $properties = array_keys(get_class_vars(get_class()));
         foreach ($parameters as $key => $parameter) {
             if (in_array($key, $properties)) {
                 $this->{$key} = $parameter;
             }
-        }    
+        }
     }
 
     /**
-     * Get the value of id
+     * Get the value of idmodelo
      */ 
-    public function getId()
+    public function getIdmodelo()
     {
-        return $this->idagente;
+        return $this->idmodelo;
     }
 
     /**
-     * Set the value of id
+     * Set the value of idmodelo
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setIdmodelo($idmodelo)
     {
-        $this->idagente = $id;
+        $this->idmodelo = $idmodelo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of sexo
+     */ 
+    public function getSexo()
+    {
+        return $this->sexo;
+    }
+
+    /**
+     * Set the value of sexo
+     *
+     * @return  self
+     */ 
+    public function setSexo($sexo)
+    {
+        $this->sexo = $sexo;
 
         return $this;
     }
@@ -63,6 +85,66 @@ class Fotografo implements Databaseable
     public function setNome($nome)
     {
         $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of medida1
+     */ 
+    public function getMedida1()
+    {
+        return $this->medida1;
+    }
+
+    /**
+     * Set the value of medida1
+     *
+     * @return  self
+     */ 
+    public function setMedida1($medida1)
+    {
+        $this->medida1 = $medida1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of medida2
+     */ 
+    public function getMedida2()
+    {
+        return $this->medida2;
+    }
+
+    /**
+     * Set the value of medida2
+     *
+     * @return  self
+     */ 
+    public function setMedida2($medida2)
+    {
+        $this->medida2 = $medida2;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of medida3
+     */ 
+    public function getMedida3()
+    {
+        return $this->medida3;
+    }
+
+    /**
+     * Set the value of medida3
+     *
+     * @return  self
+     */ 
+    public function setMedida3($medida3)
+    {
+        $this->medida3 = $medida3;
 
         return $this;
     }
@@ -204,5 +286,48 @@ class Fotografo implements Databaseable
     {
         $this->nif = $nif;
 
+        return $this;
+    }
+
+    
+
+    /**
+     * Get the value of altura
+     */ 
+    public function getAltura()
+    {
+        return $this->altura;
+    }
+
+    /**
+     * Set the value of altura
+     *
+     * @return  self
+     */ 
+    public function setAltura($altura)
+    {
+        $this->altura = $altura;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idagente
+     */ 
+    public function getIdagente()
+    {
+        return $this->idagente;
+    }
+
+    /**
+     * Set the value of idagente
+     *
+     * @return  self
+     */ 
+    public function setIdagente($idagente)
+    {
+        $this->idagente = $idagente;
+
+        return $this;
     }
 }
