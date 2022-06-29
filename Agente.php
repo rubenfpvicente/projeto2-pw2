@@ -27,7 +27,7 @@ class Agente implements Databaseable
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getIdagente()
     {
         return $this->idagente;
     }
@@ -37,7 +37,7 @@ class Agente implements Databaseable
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setIdagente($id)
     {
         $this->idagente = $id;
 

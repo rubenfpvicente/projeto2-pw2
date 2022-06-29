@@ -30,9 +30,9 @@ class Fotografo implements Databaseable
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getIdfotografo()
     {
-        return $this->idagente;
+        return $this->idfotografo;
     }
 
     /**
@@ -40,9 +40,9 @@ class Fotografo implements Databaseable
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setIdfotografo($id)
     {
-        $this->idagente = $id;
+        $this->idfotografo = $id;
 
         return $this;
     }

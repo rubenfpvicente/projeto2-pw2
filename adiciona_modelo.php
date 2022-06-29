@@ -13,3 +13,5 @@ if($modelo->save()) {
 } else {
     echo 'Error: Modelo not saved';
 }
+
+header('Location: form_modelo.php');
