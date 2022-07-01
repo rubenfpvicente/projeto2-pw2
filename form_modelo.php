@@ -61,11 +61,11 @@ require_once('Agente.php');
                                 <?php
                                     $agente = Agente::search([],[],[]);
                                     foreach ($agente as $a) {?>
-                                        <option value="<?php echo $a->getId(); ?>"><?php echo $a->getNome(); ?></option>
+                                        <option value="<?php echo $a->getIdagente(); ?>"><?php echo $a->getNome(); ?></option>
                                     <?php }
                                 ?>
                             </select> </div>
-                            <div class="form-group col-sm-6"> <button type="submit" name="modelo" class="btn-block btn-primary">Adicionar</button> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <button type="submit" name="modelo" class="btn-block btn-primary">Adicionar</button>
                         </div>
                     </form>
                 </div>

@@ -51,13 +51,18 @@ trait WithDatabaseable
 
         reset($properties);
         foreach ($properties as $i => $property) {
-            $sql .= "'" . $this->$property ."'";
-
+            if ($this->{$property} == null) {
+                $sql .= "null";
+            } else {
+                $sql .= "'" . $this->{$property} . "'";    
+            } 
+            
             if ($i < count($properties)-1) {
                 $sql .= ",";
             }
         }
         $sql .= ");";
+
 
         $ret = $connection->query($sql);
         if ($ret) {
