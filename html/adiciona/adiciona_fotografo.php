@@ -1,9 +1,9 @@
 <?php
 
-require_once('WithDatabaseable.php');
-require_once('Databaseable.php');
-require_once('MyConnect.php');
-require_once ('Fotografo.php');
+require_once('../../WithDatabaseable.php');
+require_once('../../MyConnect.php');
+require_once('../../Databaseable.php');
+require_once ('../../Fotografo.php');
 
 $fotografo = new Fotografo([
     'nome' => $_POST["nome"],

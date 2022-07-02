@@ -1,9 +1,9 @@
 <?php
 
-require_once('WithDatabaseable.php');
-require_once('Databaseable.php');
-require_once('MyConnect.php');
-require_once ('Agente.php');
+require_once('../../WithDatabaseable.php');
+require_once('../../MyConnect.php');
+require_once('../../Databaseable.php');
+require_once ('../../Agente.php');
 
 $agente = new Agente([
     'nome' => $_POST["nome"],
