@@ -58,7 +58,7 @@ require_once('../../Modelo.php');
                     <td><?php echo $m->getNif() ?></td>
                     <td><?php echo $m->getAltura() ?></td>
                     <td><?php 
-                        if($m->getIdagente() == "NULL"){
+                        if($m->getIdagente() == " "){
                             echo "Sem agente";
                         } else {
                             echo $m->getIdagente();

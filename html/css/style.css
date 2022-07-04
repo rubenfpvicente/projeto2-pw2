@@ -1,10 +1,12 @@
 body{
     color: #000;
-    overflow-x: hidden;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
     background-image: url("https://www.designcorner.pt/wp-content/uploads/2015/01/background-agencia-1.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%
+    background-size: cover;
 }
 .card{
     padding: 10px 20px;

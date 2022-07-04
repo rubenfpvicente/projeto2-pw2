@@ -10,9 +10,9 @@ $fotografia = new Fotografia([
     'cores' => $_POST["cores"],
     'tipo' => $_POST["tipo"],
     'localizacao' => $_POST["localizacao"],
-    'idfotografo' => $_POST["idfotografo"]
+    'idfotografo' => $_POST["fotografo"]
 ]);
 
 $fotografia->save();
 
-header('Location: form_fotografia.php');
+header('Location: ../forms/form_fotografia.php');

@@ -16,7 +16,7 @@ require_once('../../Agente.php');
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@ require_once('../../Agente.php');
                 <h3>Modelos</h3>
                 <div class="card">
                     <h5 class="text-center mb-4">Adicionar Modelo</h5>
-                    <form class="form-card"  method="post" action="adiciona_modelo.php" >
+                    <form class="form-card"  method="post" action="../adiciona/adiciona_modelo.php" >
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nome<span class="text-danger"> *</span></label> <input type="text" name="nome" placeholder="" onblur="validate(1)"> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">NIF<span class="text-danger"> *</span></label> <input type="text" id="nif" name="nif" placeholder="" onblur="validate(2)"> </div>

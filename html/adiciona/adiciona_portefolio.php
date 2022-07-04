@@ -9,3 +9,7 @@ $portefolio = new Portefolio([
     'dataInicio' => $_POST["data_inicio"] == '' ? null : $_POST["data_inicio"],
     'dataFim' => $_POST["data_fim"] == '' ? null : $_POST["data_fim"],
 ]);
+
+$portefolio->save();
+
+header('Location: ../forms/form_portefolio.php'); 

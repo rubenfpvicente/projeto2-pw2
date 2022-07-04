@@ -63,6 +63,7 @@ trait WithDatabaseable
         }
         $sql .= ");";
 
+        // echo $sql;exit;
 
         $ret = $connection->query($sql);
         if ($ret) {
