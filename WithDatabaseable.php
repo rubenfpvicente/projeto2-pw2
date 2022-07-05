@@ -98,7 +98,7 @@ trait WithDatabaseable
                 $sql .= " and ";
             }
         }
-
+        // echo $sql;exit;
         $results = $connection->query($sql);
         if ($results->rowCount() == 0) {
             return [];
@@ -163,4 +163,5 @@ trait WithDatabaseable
         $ret = $connection->query($sql);
         return $ret === false ? false : true;
     }
+    
 }

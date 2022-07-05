@@ -2,9 +2,9 @@
 require_once('../../WithDatabaseable.php');
 require_once('../../MyConnect.php');
 require_once('../../Databaseable.php');
-require_once('../../Agente.php'); 
+require_once('../../Fotografo.php'); 
 
-$agente = Agente::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);    
+$fotografo = Fotografo::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);  
 ?>
 
 <!DOCTYPE html>
@@ -13,14 +13,16 @@ $agente = Agente::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentes</title>
+    <title>Fotógrafos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
+
 <body>
 <div class="container">
-    <h3>Agentes</h3>
+    <h3>Fotógrafos</h3>
     <div class="card">
         <table class="table table-striped" style:"background-color:white">
             <thead>
@@ -36,26 +38,26 @@ $agente = Agente::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);
             </thead>
             <tbody>
                 <?php
-                foreach ($agente as $a) {?>
+                foreach ($fotografo as $f) {?>
                 <tr>
-                    <td><?php echo $a->getIdagente() ?></td>
-                    <td><?php echo $a->getNome() ?></td>
-                    <td><?php echo $a->getRua() . " nº " . $a->getPorta() ?></td>
-                    <td><?php echo $a->getCodigoPostal() . " " . $a->getCidade()  ?></td>
-                    <td><?php echo $a->getPais() ?></td>
-                    <td><?php echo $a->getContacto() ?></td>
-                    <td><?php echo $a->getNif() ?></td>
+                    <td><?php echo $f->getIdfotografo() ?></td>
+                    <td><?php echo $f->getNome() ?></td>
+                    <td><?php echo $f->getRua() . " nº " . $f->getPorta() ?></td>
+                    <td><?php echo $f->getCodigoPostal() . " " . $f->getCidade()  ?></td>
+                    <td><?php echo $f->getPais() ?></td>
+                    <td><?php echo $f->getContacto() ?></td>
+                    <td><?php echo $f->getNif() ?></td>
                 <?php }
                 ?>
                 </tr>
             </tbody>
         </table>
-        <form action="../filtra/filtra_agente.php" method="post">
+        <form action="../filtra/filtra_fotografo.php" method="post">
             <label for="campo">Filtrar por: </label>
             <select name="campo" id="campo">
             <!-- Query to get columns from table -->
             <?php
-            $sql = "SHOW COLUMNS FROM agente";
+            $sql = "SHOW COLUMNS FROM fotografo";
             $conn = MyConnect::getInstance();
             $result = $conn->query($sql);
             

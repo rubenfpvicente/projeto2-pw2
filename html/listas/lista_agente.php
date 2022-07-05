@@ -54,13 +54,18 @@ require_once('../../Agente.php');
         <form action="../filtra/filtra_agente.php" method="post">
             <label for="campo">Filtrar por: </label>
             <select name="campo" id="campo">
-                <option value="idagente">ID</option>
-                <option value="nome">Nome</option>
-                <option value="morada">Morada</option>
-                <option value="localidade">Localidade</option>
-                <option value="pais">País</option>
-                <option value="contacto">Contacto</option>
-                <option value="nif">NIF</option>
+            <!-- Query to get columns from table -->
+            <?php
+            $sql = "SHOW COLUMNS FROM agente";
+            $conn = MyConnect::getInstance();
+            $result = $conn->query($sql);
+            
+            if ($result->rowCount() > 0){
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {            
+                    echo "<option value='" . $row["Field"] . "'>" . $row["Field"] . "</option>" ;
+                }
+            }
+            ?>
             </select>
             <input type="text" name="valor" id="valor">
             <input type="submit" value="Pesquisar">

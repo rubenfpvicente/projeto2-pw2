@@ -69,6 +69,25 @@ require_once('../../Modelo.php');
                 </tr>
             </tbody>
         </table>
+        <form action="../filtra/filtra_modelo.php" method="post">
+            <label for="campo">Filtrar por: </label>
+            <select name="campo" id="campo">
+            <!-- Query to get columns from table -->
+            <?php
+            $sql = "SHOW COLUMNS FROM modelo";
+            $conn = MyConnect::getInstance();
+            $result = $conn->query($sql);
+            
+            if ($result->rowCount() > 0){
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {            
+                    echo "<option value='" . $row["Field"] . "'>" . $row["Field"] . "</option>" ;
+                }
+            }
+            ?>
+            </select>
+            <input type="text" name="valor" id="valor">
+            <input type="submit" value="Pesquisar">
+        </form>
     </div>
 </div>
 </body>
