@@ -3,9 +3,9 @@
 class Portefolio implements Databaseable{
     use WithDatabaseable;
 
-    protected $idPortefolio;
-    protected $dataInicio;
-    protected $dataFim;
+    protected $idportefolio;
+    protected $datainicio;
+    protected $datafim;
 
     public function __construct($parameters)
     {
@@ -17,62 +17,57 @@ class Portefolio implements Databaseable{
         }
     }
 
+
     /**
-     * Get the value of idPortefolio
-     */ 
-    public function getIdPortefolio()
+     * Get the value of idportefolio
+     */
+    public function getIdportefolio()
     {
-        return $this->idPortefolio;
+        return $this->idportefolio;
     }
 
     /**
-     * Set the value of idPortefolio
-     *
-     * @return  self
-     */ 
-    public function setIdPortefolio($idPortefolio)
+     * Set the value of idportefolio
+     */
+    public function setIdportefolio($idportefolio): self
     {
-        $this->idPortefolio = $idPortefolio;
+        $this->idportefolio = $idportefolio;
 
         return $this;
     }
 
     /**
-     * Get the value of dataInicio
-     */ 
-    public function getDataInicio()
+     * Get the value of datainicio
+     */
+    public function getDatainicio()
     {
-        return $this->dataInicio;
+        return $this->datainicio;
     }
 
     /**
-     * Set the value of dataInicio
-     *
-     * @return  self
-     */ 
-    public function setDataInicio($dataInicio)
+     * Set the value of datainicio
+     */
+    public function setDatainicio($datainicio): self
     {
-        $this->dataInicio = $dataInicio;
+        $this->datainicio = $datainicio;
 
         return $this;
     }
 
     /**
-     * Get the value of dataFim
-     */ 
-    public function getDataFim()
+     * Get the value of datafim
+     */
+    public function getDatafim()
     {
-        return $this->dataFim;
+        return $this->datafim;
     }
 
     /**
-     * Set the value of dataFim
-     *
-     * @return  self
-     */ 
-    public function setDataFim($dataFim)
+     * Set the value of datafim
+     */
+    public function setDatafim($datafim): self
     {
-        $this->dataFim = $dataFim;
+        $this->datafim = $datafim;
 
         return $this;
     }

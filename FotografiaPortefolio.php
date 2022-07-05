@@ -3,8 +3,8 @@
 class FotografiaPortefolio implements Databaseable{
     use WithDatabaseable;
 
-    protected $idFotografia;
-    protected $idPortefolio;
+    protected $idfotografia;
+    protected $idportefolio;
 
     public function __construct($parameters)
     {
@@ -16,38 +16,40 @@ class FotografiaPortefolio implements Databaseable{
         }
     }
 
-     /**
-     * Get the value of idFotografia
+    
+
+    /**
+     * Get the value of idfotografia
      */
-    public function getIdFotografia()
+    public function getIdfotografia()
     {
-        return $this->idFotografia;
+        return $this->idfotografia;
     }
 
     /**
-     * Set the value of idFotografia
+     * Set the value of idfotografia
      */
-    public function setIdFotografia($idFotografia): self
+    public function setIdfotografia($idfotografia): self
     {
-        $this->idFotografia = $idFotografia;
+        $this->idfotografia = $idfotografia;
 
         return $this;
     }
 
     /**
-     * Get the value of idPortefolio
+     * Get the value of idportefolio
      */
-    public function getIdPortefolio()
+    public function getIdportefolio()
     {
-        return $this->idPortefolio;
+        return $this->idportefolio;
     }
 
     /**
-     * Set the value of idPortefolio
+     * Set the value of idportefolio
      */
-    public function setIdPortefolio($idPortefolio): self
+    public function setIdportefolio($idportefolio): self
     {
-        $this->idPortefolio = $idPortefolio;
+        $this->idportefolio = $idportefolio;
 
         return $this;
     }

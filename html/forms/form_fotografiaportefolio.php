@@ -41,7 +41,7 @@ require_once('../../Portefolio.php');
                                 <?php
                                     $portefolio = Portefolio::search([],[],[]);
                                     foreach ($portefolio as $p) {?>
-                                        <option value="<?php echo $p->getIdPortefolio(); ?>"><?php echo $p->getIdPortefolio(); ?></option>
+                                        <option value="<?php echo $p->getIdportefolio(); ?>"><?php echo $p->getIdportefolio(); ?></option>
                                     <?php }
                                 ?>
                             </select> </div>

@@ -1,8 +1,8 @@
 <?php 
-require_once('WithDatabaseable.php');
-require_once('MyConnect.php');
-require_once('Databaseable.php');
-require_once('Agente.php'); 
+require_once('../../WithDatabaseable.php');
+require_once('../../MyConnect.php');
+require_once('../../Databaseable.php');
+require_once('../../Agente.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +51,20 @@ require_once('Agente.php');
                 </tr>
             </tbody>
         </table>
+        <form action="../filtra/filtra_agente.php" method="post">
+            <label for="campo">Filtrar por: </label>
+            <select name="campo" id="campo">
+                <option value="idagente">ID</option>
+                <option value="nome">Nome</option>
+                <option value="morada">Morada</option>
+                <option value="localidade">Localidade</option>
+                <option value="pais">País</option>
+                <option value="contacto">Contacto</option>
+                <option value="nif">NIF</option>
+            </select>
+            <input type="text" name="valor" id="valor">
+            <input type="submit" value="Pesquisar">
+        </form>
     </div>
 </div>
 </body>

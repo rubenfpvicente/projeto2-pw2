@@ -20,10 +20,10 @@ require_once ('../../Modelo.php');
 // $historico_agenciamento->save();
 
 $id_modelo = $_POST["modelo"];
-$modelo = Modelo::search([''],[''],['']);
-// print_r($modelo);
+$modelo = Modelo::search([],[],[]);
 
 
-$modelo[$id_modelo]->setIdagente($_POST["agente"]);
+$modelo[$id_modelo]->setIdagente($_POST['novo_agente']);
+
 $modelo[$id_modelo]->update();
-// header('Location: form_altera_agente.php');
+header('Location: ../forms/form_alteraragente.php');

@@ -18,4 +18,4 @@ $agente = new Agente([
 
 $agente->save();
 
-header('Location: form_agente.php');
+header('Location: ../forms/form_agente.php');

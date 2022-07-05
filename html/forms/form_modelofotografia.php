@@ -3,7 +3,7 @@ require_once('../../WithDatabaseable.php');
 require_once('../../MyConnect.php');
 require_once('../../Databaseable.php');
 require_once('../../Modelo.php'); 
-require_once('../../Agente.php'); 
+require_once('../../Fotografia.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ require_once('../../Agente.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agente</title>
+    <title>Adicionar Modelo à Fotografia</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,10 +24,10 @@ require_once('../../Agente.php');
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <h3>Alterar Agente</h3>
+                <h3>Adicionar Modelo à Fotografia</h3>
                 <div class="card">
-                    <h5 class="text-center mb-4">Alterar Agente</h5>
-                    <form class="form-card"  method="post" action="../adiciona/altera_agente.php" >
+                    <h5 class="text-center mb-4">Adicionar Modelo à Fotografia</h5>
+                    <form class="form-card"  method="post" action="../adiciona/adiciona_modelofotografia.php" >
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Modelo<span class="text-danger"> *</span></label> <select name="modelo" id="" placeholder="" onblur="validate(5)">
                                 <?php
@@ -37,21 +37,18 @@ require_once('../../Agente.php');
                                     <?php }
                                 ?>
                             </select> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Novo Agente<span class="text-danger"> *</span></label> <select name="novo_agente" placeholder="" onblur="validate(5)" class="form-control">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Fotografia<span class="text-danger"> *</span></label> <select name="fotografia" id="" placeholder="" onblur="validate(5)">
                                 <?php
-                                    $agente = Agente::search([],[],[]);
-                                    foreach ($agente as $a) {?>
-                                        <option value="<?php echo $a->getIdagente(); ?>"><?php echo $a->getNome(); ?></option>
+                                    $fotografia = Fotografia::search([],[],[]);
+                                    foreach ($fotografia as $f) {?>
+                                        <option value="<?php echo $f->getIdfotografia(); ?>"><?php echo $f->getNome(); ?></option>
                                     <?php }
                                 ?>
                             </select> </div>
                         </div>
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Motivo<span class="text-danger"> *</span></label> <input type="text" id="" name="motivo" placeholder="" onblur="validate(4)"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Data de Início (Atual Agente)<span class="text-danger"> *</span></label> <input type="date" id="" name="data_inicio" placeholder="" onblur="validate(5)"> </div>
+                        <div class="row justify-content-end">
+                            <div class="form-group col-sm-6"> <button type="submit" name="submit" class="btn-block btn-primary">Adicionar</button> </div>
                         </div>
-                            <div class="form-group col-sm-6"> <button type="submit" name="alterar" class="btn-block btn-primary">Alterar</button> </div>
-                        </div> 
                     </form>
                 </div>
             </div>

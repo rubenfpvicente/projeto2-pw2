@@ -159,6 +159,7 @@ trait WithDatabaseable
         }
         $sql .= " where id" . $table . " = " . $this->{"id" . $table};
 
+        echo $sql;exit;
         $ret = $connection->query($sql);
         return $ret === false ? false : true;
     }
