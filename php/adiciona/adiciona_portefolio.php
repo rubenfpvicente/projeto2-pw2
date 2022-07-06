@@ -12,4 +12,4 @@ $portefolio = new Portefolio([
 
 $portefolio->save();
 
-header('Location: ../forms/form_portefolio.php'); 
+header('Location: ../../html/forms/form_portefolio.php'); 

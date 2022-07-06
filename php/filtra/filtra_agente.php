@@ -3,6 +3,8 @@ require_once('../../WithDatabaseable.php');
 require_once('../../MyConnect.php');
 require_once('../../Databaseable.php');
 require_once('../../Agente.php'); 
+
+$agente = Agente::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);    
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +18,7 @@ require_once('../../Agente.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style_menu.css">
-
 </head>
-
 <body>
 <div class="container">
     <h3>Agentes</h3>
@@ -37,7 +37,6 @@ require_once('../../Agente.php');
             </thead>
             <tbody>
                 <?php
-                $agente = Agente::search([],[],[]);
                 foreach ($agente as $a) {?>
                 <tr>
                     <td><?php echo $a->getIdagente() ?></td>
@@ -53,7 +52,7 @@ require_once('../../Agente.php');
                 </tr>
             </tbody>
         </table>
-        <form action="../../php/filtra/filtra_agente.php" method="post">
+        <form action="./filtra_agente.php" method="post">
             <label for="campo">Filtrar por: </label>
             <select name="campo" id="campo">
             <!-- Query to get columns from table -->

@@ -12,4 +12,4 @@ $fotografia_portefolio = new FotografiaPortefolio ([
 
 $fotografia_portefolio->save();
 
-header('Location: ../forms/form_fotografiaportefolio.php');
+header('Location: ../../html/forms/form_fotografiaportefolio.php');

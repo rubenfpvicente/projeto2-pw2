@@ -25,4 +25,4 @@ $modelo = new Modelo([
 
 $modelo->save();
 
-header('Location: ../forms/form_modelo.php'); 
+header('Location: ../../html/forms/form_modelo.php'); 

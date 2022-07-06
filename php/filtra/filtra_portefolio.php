@@ -2,7 +2,9 @@
 require_once('../../WithDatabaseable.php');
 require_once('../../MyConnect.php');
 require_once('../../Databaseable.php');
-require_once('../../Agente.php'); 
+require_once('../../Portefolio.php');
+
+$portefolio = Portefolio::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']); 
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +13,7 @@ require_once('../../Agente.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentes</title>
+    <title>Portefólios</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -21,44 +23,35 @@ require_once('../../Agente.php');
 
 <body>
 <div class="container">
-    <h3>Agentes</h3>
+    <h3>Portefólios</h3>
     <div class="card">
         <table class="table table-striped" style:"background-color:white">
             <thead>
                 <tr>
                     <th style="padding: 5px">ID</th>
-                    <th style="padding: 5px">Nome</th>
-                    <th style="padding: 5px">Morada</th>
-                    <th style="padding: 5px">Localidade</th>
-                    <th style="padding: 5px">País</th>
-                    <th style="padding: 5px">Contacto</th>
-                    <th style="padding: 5px">NIF</th>
+                    <th style="padding: 5px">Data de Início</th>
+                    <th style="padding: 5px">Data de Fim</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $agente = Agente::search([],[],[]);
-                foreach ($agente as $a) {?>
+                foreach ($portefolio as $p) {?>
                 <tr>
-                    <td><?php echo $a->getIdagente() ?></td>
-                    <td><?php echo $a->getNome() ?></td>
-                    <td><?php echo $a->getRua() . " nº " . $a->getPorta() ?></td>
-                    <td><?php echo $a->getCodigoPostal() . " " . $a->getCidade()  ?></td>
-                    <td><?php echo $a->getPais() ?></td>
-                    <td><?php echo $a->getContacto() ?></td>
-                    <td><?php echo $a->getNif() ?></td>
-                    <td><button><a href="../../php/apagar/apagar_agente.php?id=<?php echo $a->getIdagente() ?>" style="color: black">Apagar</a></button></td>
+                    <td><?php echo $p->getIdportefolio() ?></td>
+                    <td><?php echo $p->getDataInicio() ?></td>
+                    <td><?php echo $p->getDataFim() ?></td>
+                    <td><button><a href="../../php/apagar/apagar_portefolio.php?id=<?php echo $p->getIdportefolio(); ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>
                 </tr>
             </tbody>
         </table>
-        <form action="../../php/filtra/filtra_agente.php" method="post">
+        <form action="../filtra/filtra_portefolio.php" method="post">
             <label for="campo">Filtrar por: </label>
             <select name="campo" id="campo">
             <!-- Query to get columns from table -->
             <?php
-            $sql = "SHOW COLUMNS FROM agente";
+            $sql = "SHOW COLUMNS FROM portefolio";
             $conn = MyConnect::getInstance();
             $result = $conn->query($sql);
             

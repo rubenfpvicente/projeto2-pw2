@@ -17,6 +17,7 @@ $modelo = Modelo::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style_menu.css">
 
 </head>
 
@@ -59,12 +60,12 @@ $modelo = Modelo::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);
                     <td><?php echo $m->getNif() ?></td>
                     <td><?php echo $m->getAltura() ?></td>
                     <td><?php 
-                        if($m->getIdagente() == " "){
-                            echo "Sem agente";
-                        } else {
-                            echo $m->getIdagente();
+                        $agente = Agente::search(['idagente'],['like'],[$m->getIdagente()]);
+                        foreach ($agente as $a) {
+                            echo $a->getNome();
                         }
                     ?></td>
+                    <td><button><a href="../../php/apagar/apagar_modelo.php?id=<?php echo $m->getIdmodelo() ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>
                 </tr>
@@ -89,6 +90,7 @@ $modelo = Modelo::search([$_POST['campo']],['like'],['%'.$_POST['valor'].'%']);
             <input type="text" name="valor" id="valor">
             <input type="submit" value="Pesquisar">
         </form>
+        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
     </div>
 </div>
 </body>

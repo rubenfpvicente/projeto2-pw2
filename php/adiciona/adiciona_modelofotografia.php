@@ -12,4 +12,4 @@ $modelo_fotografia = new ModeloFotografia([
 
 $modelo_fotografia->save();
 
-header('Location: ../forms/form_modelofotografia.php');
+header('Location: ../../html/forms/form_modelofotografia.php');

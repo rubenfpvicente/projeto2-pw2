@@ -130,6 +130,7 @@ trait WithDatabaseable
         $connection = MyConnect::getInstance();
 
         $sql = "delete from " . $table . " where id" . $table . "= " . $id;
+        // echo $sql;exit;
         $result = $connection->query($sql);
 
         return $result === false ? false : true;
@@ -159,7 +160,7 @@ trait WithDatabaseable
         }
         $sql .= " where id" . $table . " = " . $this->{"id" . $table};
 
-        echo $sql;exit;
+        // echo $sql;exit;
         $ret = $connection->query($sql);
         return $ret === false ? false : true;
     }

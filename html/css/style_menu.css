@@ -1,0 +1,9 @@
+.btn-menu{
+    background-color: rgb(60, 245, 152);
+    width: 10rem;
+    height: 5rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+}

@@ -22,12 +22,13 @@ require_once('../../Portefolio.php');
 
 <body>
     <div class="container-fluid px-1 py-5 mx-auto">
+        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
                 <h3>Adicionar Fotografia ao Portefolio</h3>
                 <div class="card">
                     <h5 class="text-center mb-4">Adicionar Fotografia ao Portefolio</h5>
-                    <form class="form-card"  method="post" action="../adiciona/adiciona_fotografiaportefolio.php" >
+                    <form class="form-card"  method="post" action="../../php/adiciona/adiciona_fotografiaportefolio.php" >
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Fotografia<span class="text-danger"> *</span></label> <select name="fotografia" id="" placeholder="" onblur="validate(5)">
                                 <?php

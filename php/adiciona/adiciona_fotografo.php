@@ -18,5 +18,5 @@ $fotografo = new Fotografo([
 
 $fotografo->save();
 
-header('Location: ../forms/form_fotografo.php');
+header('Location: ../../html/forms/form_fotografo.php');
 

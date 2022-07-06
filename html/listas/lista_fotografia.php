@@ -15,6 +15,7 @@ require_once('../../Fotografia.php');
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style_menu.css">
 
 </head>
 
@@ -46,12 +47,13 @@ require_once('../../Fotografia.php');
                     <td><?php echo $f->getTipo() ?></td>
                     <td><?php echo $f->getLocalizacao() ?></td>
                     <td><?php echo $f->getIdfotografo() ?></td>
+                    <td><button><a href="../../php/apagar/apagar_fotografia.php?id=<?php echo $a->getIdfotografia() ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>
                 </tr>
             </tbody>
         </table>
-        <form action="../filtra/filtra_fotografia.php" method="post">
+        <form action="../../php/filtra/filtra_fotografia.php" method="post">
             <label for="campo">Filtrar por: </label>
             <select name="campo" id="campo">
             <!-- Query to get columns from table -->
@@ -70,6 +72,7 @@ require_once('../../Fotografia.php');
             <input type="text" name="valor" id="valor">
             <input type="submit" value="Pesquisar">
         </form>
+        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
     </div>
 </div>
 </body>

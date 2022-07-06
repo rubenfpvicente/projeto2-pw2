@@ -14,12 +14,13 @@
 
 <body>
     <div class="container-fluid px-1 py-5 mx-auto">
+        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
                 <h3>Portefólios</h3>
                 <div class="card">
                     <h5 class="text-center mb-4">Adicionar Portefolio</h5>
-                    <form class="form-card"  method="post" action="../adiciona/adiciona_portefolio.php" >
+                    <form class="form-card"  method="post" action="../../php/adiciona/adiciona_portefolio.php" >
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Data Início<span class="text-danger"> *</span></label> <input type="date" name="data_inicio" placeholder="" onblur="validate(1)"> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Data Fim<span class="text-danger"> *</span></label> <input type="date" id="data_fim" name="data_fim" placeholder="" onblur="validate(2)"> </div>

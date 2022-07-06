@@ -15,4 +15,4 @@ $fotografia = new Fotografia([
 
 $fotografia->save();
 
-header('Location: ../forms/form_fotografia.php');
+header('Location: ../../html/forms/form_fotografia.php');

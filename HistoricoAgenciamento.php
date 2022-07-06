@@ -10,8 +10,8 @@ class HistoricoAgenciamento implements Databaseable
 
     protected $idagente;
     protected $idmodelo;
-    protected $dataInicio;
-    protected $dataFim;
+    protected $datainicio;
+    protected $datafim;
     protected $motivo;
 
     public function __construct(array $parameters)
@@ -61,38 +61,40 @@ class HistoricoAgenciamento implements Databaseable
         return $this;
     }
 
+
+
     /**
-     * Get the value of dataInicio
+     * Get the value of datainicio
      */
-    public function getDataInicio()
+    public function getDatainicio()
     {
-        return $this->dataInicio;
+        return $this->datainicio;
     }
 
     /**
-     * Set the value of dataInicio
+     * Set the value of datainicio
      */
-    public function setDataInicio($dataInicio): self
+    public function setDatainicio($datainicio): self
     {
-        $this->dataInicio = $dataInicio;
+        $this->datainicio = $datainicio;
 
         return $this;
     }
 
     /**
-     * Get the value of dataFim
+     * Get the value of datafim
      */
-    public function getDataFim()
+    public function getDatafim()
     {
-        return $this->dataFim;
+        return $this->datafim;
     }
 
     /**
-     * Set the value of dataFim
+     * Set the value of datafim
      */
-    public function setDataFim($dataFim): self
+    public function setDatafim($datafim): self
     {
-        $this->dataFim = $dataFim;
+        $this->datafim = $datafim;
 
         return $this;
     }

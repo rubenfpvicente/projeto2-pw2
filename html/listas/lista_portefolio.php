@@ -15,6 +15,7 @@ require_once('../../Portefolio.php');
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style_menu.css">
 
 </head>
 
@@ -38,12 +39,13 @@ require_once('../../Portefolio.php');
                     <td><?php echo $p->getIdportefolio() ?></td>
                     <td><?php echo $p->getDataInicio() ?></td>
                     <td><?php echo $p->getDataFim() ?></td>
+                    <td><button><a href="../../php/apagar/apagar_portefolio.php?id=<?php echo $p->getIdportefolio() ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>
                 </tr>
             </tbody>
         </table>
-        <form action="../filtra/filtra_portefolio.php" method="post">
+        <form action="../../php/filtra/filtra_portefolio.php" method="post">
             <label for="campo">Filtrar por: </label>
             <select name="campo" id="campo">
             <!-- Query to get columns from table -->
@@ -62,6 +64,7 @@ require_once('../../Portefolio.php');
             <input type="text" name="valor" id="valor">
             <input type="submit" value="Pesquisar">
         </form>
+        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
     </div>
 </div>
 </body>
