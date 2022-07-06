@@ -1,5 +1,5 @@
-body{
-    color: white;
+/* body{
+    color: black;
     overflow-x: hidden;
     height: 100%;
     background-image: url("https://www.designcorner.pt/wp-content/uploads/2015/01/background-agencia-1.jpg");
@@ -62,43 +62,4 @@ button:focus{
 
 h3{
     color: white;
-}
-
-.menu{
-    background-color: #00BCD4;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.menu .content{
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
-  .dropdown:hover .content {
-    display: block;
-  }
-
-  .content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-    .content a:hover {
-        background-color: #ddd;
-    }
-
-    
+} */
