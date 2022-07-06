@@ -2,6 +2,7 @@
 require_once('../../WithDatabaseable.php');
 require_once('../../MyConnect.php');
 require_once('../../Databaseable.php');
+require_once('../../Modelo.php'); 
 require_once('../../Fotografia.php'); 
 ?>
 
@@ -33,6 +34,7 @@ require_once('../../Fotografia.php');
                     <th style="padding: 5px">Tipo</th>
                     <th style="padding: 5px">Localização</th>
                     <th style="padding: 5px">Fotógrafo</th>
+                    <th style="padding: 5px">Modelos</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,6 +49,25 @@ require_once('../../Fotografia.php');
                     <td><?php echo $f->getTipo() ?></td>
                     <td><?php echo $f->getLocalizacao() ?></td>
                     <td><?php echo $f->getIdfotografo() ?></td>
+                    <td>
+                        <?php
+                        $sql = "SELECT M.idmodelo FROM fotografia F, modelo M, modelofotografia MF WHERE F.idfotografia = MF.idfotografia AND M.idmodelo = MF.idmodelo AND F.idfotografia = " . $f->getIdfotografia() . ";";
+                        $conn = MyConnect::getInstance();
+                        $result = $conn->query($sql);
+
+                        if ($result->rowCount() > 0){
+                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                $id_modelo = $row['idmodelo'];
+                                $modelo = Modelo::search([],[],[]);
+                                foreach ($modelo as $m) {
+                                    if($m->getIdmodelo() == $id_modelo){
+                                        echo $m->getNome() . "<br>";
+                                    }          
+                                }
+                            }
+                        }
+                        ?>
+                    </td>
                     <td><button><a href="../../php/apagar/apagar_fotografia.php?id=<?php echo $f->getIdfotografia() ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>

@@ -2,6 +2,7 @@
 require_once('../../WithDatabaseable.php');
 require_once('../../MyConnect.php');
 require_once('../../Databaseable.php');
+require_once('../../Fotografia.php'); 
 require_once('../../Portefolio.php'); 
 ?>
 
@@ -29,6 +30,7 @@ require_once('../../Portefolio.php');
                     <th style="padding: 5px">ID</th>
                     <th style="padding: 5px">Data de Início</th>
                     <th style="padding: 5px">Data de Fim</th>
+                    <th style="padding: 5px">Fotografias</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +41,25 @@ require_once('../../Portefolio.php');
                     <td><?php echo $p->getIdportefolio() ?></td>
                     <td><?php echo $p->getDataInicio() ?></td>
                     <td><?php echo $p->getDataFim() ?></td>
+                    <td>
+                        <?php
+                        $sql = "SELECT F.idfotografia FROM fotografia F, portefolio P, fotografiaportefolio FP WHERE F.idfotografia = FP.idfotografia AND P.idportefolio = FP.idportefolio AND P.idportefolio = " . $p->getIdportefolio() . ";";
+                        $conn = MyConnect::getInstance();
+                        $result = $conn->query($sql);
+
+                        if ($result->rowCount() > 0){
+                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                $id_fotografia = $row['idfotografia'];
+                                $fotografia = Fotografia::search([],[],[]);
+                                foreach ($fotografia as $f) {
+                                    if($f->getIdfotografia() == $id_fotografia){
+                                        echo $f->getNome() . "<br>";
+                                    }          
+                                }
+                            }
+                        }
+                        ?>
+                    </td>
                     <td><button><a href="../../php/apagar/apagar_portefolio.php?id=<?php echo $p->getIdportefolio() ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>
