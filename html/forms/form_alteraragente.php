@@ -49,7 +49,7 @@ require_once('../../Agente.php');
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Motivo<span class="text-danger"> *</span></label> <input type="text" id="" name="motivo" placeholder="" onblur="validate(4)"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Data de Início (Atual Agente)<span class="text-danger"> *</span></label> <input type="date" id="" name="data_inicio" placeholder="" onblur="validate(5)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Data de Inicio (Ex-Agente) <span class="text-danger"> *</span></label> <input type="date" name="data_inicio" placeholder="" onblur="validate(4)"> </div>
                         </div>
                             <div class="form-group col-sm-6"> <button type="submit" name="alterar" class="btn-block btn-primary">Alterar</button> </div>
                         </div> 

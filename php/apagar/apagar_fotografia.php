@@ -13,4 +13,4 @@ foreach ($fotografia as $f){
     }
 }
 
-header('Location: ../listas/lista_fotografia.php');
+header('Location: ../../html/listas/lista_fotografia.php');

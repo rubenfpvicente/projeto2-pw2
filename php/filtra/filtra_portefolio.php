@@ -65,7 +65,7 @@ $portefolio = Portefolio::search([$_POST['campo']],['like'],['%'.$_POST['valor']
             <input type="text" name="valor" id="valor">
             <input type="submit" value="Pesquisar">
         </form>
-        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
+        <a href="../../html/index.html" style="color: black"><button class="btn-menu">Menu</button></a>
     </div>
 </div>
 </body>

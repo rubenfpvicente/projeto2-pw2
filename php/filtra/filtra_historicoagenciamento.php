@@ -81,7 +81,7 @@ $historico_agenciamento = HistoricoAgenciamento::search([$_POST['campo']],['like
             <input type="text" name="valor" id="valor">
             <input type="submit" value="Pesquisar">
         </form>
-        <a href="../index.html" style="color: black"><button class="btn-menu">Menu</button></a>
+        <a href="../../html/index.html" style="color: black"><button class="btn-menu">Menu</button></a>
     </div>
 </div>
 </body>

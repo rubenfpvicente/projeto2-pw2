@@ -47,7 +47,7 @@ require_once('../../Fotografia.php');
                     <td><?php echo $f->getTipo() ?></td>
                     <td><?php echo $f->getLocalizacao() ?></td>
                     <td><?php echo $f->getIdfotografo() ?></td>
-                    <td><button><a href="../../php/apagar/apagar_fotografia.php?id=<?php echo $a->getIdfotografia() ?>" style="color: black">Apagar</a></button></td>
+                    <td><button><a href="../../php/apagar/apagar_fotografia.php?id=<?php echo $f->getIdfotografia() ?>" style="color: black">Apagar</a></button></td>
                 <?php }
                 ?>
                 </tr>

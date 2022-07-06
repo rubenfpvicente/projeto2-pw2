@@ -11,8 +11,8 @@ $historico_agenciamento = new HistoricoAgenciamento(
     [
         'idagente' => $_POST["novo_agente"],
         'idmodelo' => $_POST["modelo"],
-        'dataInicio' => $_POST["data_inicio"] == '' ? null : $_POST["data_inicio"],
-        'dataFim' => date("Y-m-d") == '' ? null : date("Y-m-d"),
+        'datainicio' => $_POST["data_inicio"] == '' ? null : $_POST["data_inicio"],
+        'datafim' => date("Y-m-d"),
         'motivo' => $_POST["motivo"]
     ]
 );
