@@ -16,7 +16,7 @@ $historico_agenciamento = HistoricoAgenciamento::search([$_POST['campo']],['like
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotógrafos</title>
+    <title>Histórico de Agenciamento</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -26,7 +26,7 @@ $historico_agenciamento = HistoricoAgenciamento::search([$_POST['campo']],['like
 
 <body>
 <div class="container">
-    <h3>Fotógrafos</h3>
+    <h3>Histórico de Agenciamento</h3>
     <div class="card">
         <table class="table table-striped" style:"background-color:white">
             <thead>
